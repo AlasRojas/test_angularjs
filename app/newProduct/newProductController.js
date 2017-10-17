@@ -5,7 +5,7 @@ app.controller('newProductController',['$scope',
   function($scope){
   	var datos = {};
     $scope.sendProduct = function() {
-    	
+
     	datos.range = document.getElementsByClassName("rango")[0].value;
     	datos.description = document.getElementsByClassName("description")[0].value;
     	datos.nameOfProduct = document.getElementsByClassName("name")[0].value;
@@ -21,7 +21,10 @@ app.controller('newProductController',['$scope',
     			datos.tags.push( document.getElementsByClassName("tags")[i].value ); 
     		}
     	}
+
     	console.log(datos);
+    	
+    	$scope.datos = datos;
     	
     };
     
