@@ -1,1 +1,18 @@
-<div>Todos los productos</div>
+<div>
+Todos los productos
+
+	<button ng-click="sortProducts('provider')">Provedor</button>
+	<button ng-click="sortProducts('nameOfProduct')">Nombre</button>
+	<button ng-click="sortProducts('range')">Rango</button>
+	<button ng-click="sortProducts('price')">Precio</button>
+	<button ng-click="sortProducts('isActive')">Activo</button>
+
+	<div ng-repeat="item in productos">
+	    <p>{{ item.range }}</p>
+	    <p>{{ item.provider }}</p>
+	    <p>{{ item.price }}</p>
+	    <p>{{ item.isActive }}</p>
+	    <p>{{ item.nameOfProduct }}</p>
+	    <img ng-src="{{ item.picture }}" />
+  	</div>
+</div>

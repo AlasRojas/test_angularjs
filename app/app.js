@@ -1,17 +1,13 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('store', [
-  'ngRoute',
-  'store.allProducts',
-  'store.newProduct'
-]).
-config(config);
+var app = angular.module('store', [
+  'ngRoute'
+]);
 
-function config (locationProvider, routeProvider) {
-  locationProvider.hashPrefix('!');
-  
-  routeProvider
+
+app.config(function ($routeProvider) { 
+  $routeProvider 
     .when('/newProduct', {
       templateUrl: 'newProduct/newProductView.html',
       controller: 'newProductController'
@@ -21,6 +17,7 @@ function config (locationProvider, routeProvider) {
       controller: 'allProductsController'
     })
     .otherwise({redirectTo: '/allProducts'});
-}
+});
 
-config.inject = ['locationProvider', 'routeProvider'];
+
+//config.inject = ['locationProvider', 'routeProvider'];

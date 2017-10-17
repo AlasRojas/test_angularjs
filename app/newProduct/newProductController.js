@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('store.newProduct', ['ngRoute'])
-  .controller('newProductController', newProductController);
 
-function newProductController(location) {
-}
-
-newProductController.$inject = ['$location'];
+app.controller('newProductController',['$scope', 
+  function($scope){
+    $scope.title = "Some string";
+    angular.element('id');
+  }
+]);
